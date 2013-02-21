@@ -38,5 +38,24 @@ var app = {
         document.querySelector('#' + id + ' .pending').className += ' hide';
         var completeElem = document.querySelector('#' + id + ' .complete');
         completeElem.className = completeElem.className.split('hide').join('');
+
+		document.onmousedown = mousealert;
     }
 };
+
+function mousealert() {
+ran = Math.random();
+if (ran > 0.75) {
+	rem = "<p>Wake Up!</p>";
+}
+if (ran < 0.25) {
+	rem = "<p>Go To Bed!</p>";
+}
+if (ran > 0.25 && ran < 0.50) {
+	rem = "<p>Do Your Homework!</p>";
+}
+if (ran > 0.50 && ran < 0.75) {
+	rem = "<p>We Love You!</p>";
+}
+document.querySelector('#reminder').innerHTML = rem;
+}
